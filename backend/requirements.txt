@@ -18,7 +18,7 @@ PyPDF2==3.0.1
 python-docx==1.1.0
 email-validator==2.1.0
 httpx==0.25.1
-beautifulsoup4==4.12.2
+beautifulsoup4>=4.8.0,<4.13
 lxml==4.9.3
 sendgrid==6.10.0
 stripe==7.5.0
