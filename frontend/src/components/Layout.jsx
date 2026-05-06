@@ -10,6 +10,8 @@ export default function Layout({ children }) {
     { href: '/', label: 'Home' },
     { href: '/dashboard', label: 'Dashboard' },
     { href: '/cv-diagnostic', label: 'CV Diagnostic' },
+    { href: '/job-evaluator', label: 'Job Evaluator' },
+    { href: '/interview-prep', label: 'Interview Prep' },
     { href: '/ats-optimizer', label: 'ATS Optimizer' },
     { href: '/pricing', label: 'Pricing' },
   ];
