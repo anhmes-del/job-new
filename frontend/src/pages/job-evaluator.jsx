@@ -33,16 +33,19 @@ export default function JobEvaluator() {
 
   return (
     <Layout>
-      <div className="max-w-6xl mx-auto p-6 animate-fade-in">
+      <div className="container-max section-padding">
         <div className="text-center mb-12">
-          <h1 className="section-title gradient-text">AI Job Evaluator</h1>
-          <p className="section-subtitle">
-            Paste a job description for A-F evaluation with legitimacy check
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-white">AI Job </span>
+            <span className="gradient-gold">Evaluator</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Dán mô tả công việc để đánh giá A-F với kiểm tra tính hợp lệ
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="card">
+          <div className="card-dark">
             <h3 className="text-xl font-bold mb-4">Job Description</h3>
             <textarea
               className="input-field h-64 resize-none mb-4"
@@ -50,17 +53,17 @@ export default function JobEvaluator() {
               value={jdText}
               onChange={(e) => setJdText(e.target.value)}
             />
-            <button
+              <button
               onClick={handleEvaluate}
               disabled={!jdText.trim() || loading}
-              className="btn-primary w-full disabled:opacity-50"
+              className="btn-gold w-full disabled:opacity-50"
             >
               {loading ? 'Evaluating...' : 'Evaluate Job'}
             </button>
           </div>
 
           {result && (
-            <div className="card animate-slide-up">
+            <div className="card-dark animate-slide-up">
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-2xl font-bold">Evaluation Results</h3>
                 <div className={`text-4xl font-bold ${getScoreColor(result.global_score)}`}>

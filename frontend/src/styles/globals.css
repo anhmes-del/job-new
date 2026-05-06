@@ -3,14 +3,16 @@
 @tailwind utilities;
 
 :root {
-  --primary: #6366f1;
-  --primary-dark: #4f46e5;
-  --secondary: #0ea5e9;
-  --accent: #f59e0b;
-  --background: #f8fafc;
-  --surface: #ffffff;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
+  --navy: #0a1929;
+  --navy-light: #132f4e;
+  --navy-lighter: #1e3a5f;
+  --gold: #fbbf24;
+  --gold-light: #fcd34d;
+  --gold-dark: #f59e0b;
+  --white: #ffffff;
+  --gray-light: #f3f4f6;
+  --gray: #9ca3af;
+  --gray-dark: #4b5563;
 }
 
 * {
@@ -21,65 +23,68 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--background);
-  color: var(--text-primary);
+  background: var(--navy);
+  color: var(--white);
   line-height: 1.6;
 }
 
 @layer components {
-  .btn-primary {
-    @apply bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5;
+  .btn-gold {
+    @apply bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105;
   }
   
-  .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-indigo-600 font-semibold py-2 px-6 rounded-lg border-2 border-indigo-600 transition-all duration-300;
+  .btn-outline-white {
+    @apply border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold py-3 px-8 rounded-lg transition-all duration-300;
   }
   
-  .card {
-    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 p-6 border border-gray-100;
+  .card-dark {
+    @apply bg-navy-light rounded-2xl p-6 border border-navy-lighter hover:border-yellow-400 transition-all duration-300;
   }
   
-  .input-field {
-    @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 outline-none transition-all duration-200;
+  .section-padding {
+    @apply py-20 px-6;
   }
   
-  .gradient-text {
-    @apply bg-gradient-to-r from-indigo-600 to-cyan-500 bg-clip-text text-transparent;
-  }
-  
-  .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-4;
-  }
-  
-  .section-subtitle {
-    @apply text-lg text-gray-600 mb-12 max-w-2xl mx-auto;
+  .container-max {
+    @apply max-w-7xl mx-auto;
   }
 }
 
-.gradient-bg {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.gradient-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.glass {
-  background: rgba(255, 255, 255, 0.25);
+.glass-dark {
+  background: rgba(10, 25, 41, 0.8);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(251, 191, 36, 0.2);
 }
 
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-in-out;
+.stats-bar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.testimonial-card {
+  background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy-lighter) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
-.animate-slide-up {
-  animation: slideUp 0.8s ease-out;
+.category-card {
+  background: linear-gradient(135deg, var(--navy-light) 0%, rgba(251, 191, 36, 0.1) 100%);
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  transition: all 0.3s ease;
 }
 
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+.category-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 50%, rgba(251, 191, 36, 0.1) 100%);
 }

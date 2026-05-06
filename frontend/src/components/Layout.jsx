@@ -7,21 +7,20 @@ export default function Layout({ children }) {
   const router = useRouter();
 
   const navItems = [
-    { href: '/', label: 'Home' },
-    { href: '/dashboard', label: 'Dashboard' },
-    { href: '/cv-diagnostic', label: 'CV Diagnostic' },
-    { href: '/job-evaluator', label: 'Job Evaluator' },
-    { href: '/interview-prep', label: 'Interview Prep' },
-    { href: '/ats-optimizer', label: 'ATS Optimizer' },
-    { href: '/pricing', label: 'Pricing' },
+    { href: '/', label: 'Trang chủ' },
+    { href: '/jobs', label: 'Tìm việc' },
+    { href: '/companies', label: 'Công ty' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/events', label: 'Sự kiện' },
+    { href: '/contact', label: 'Liên hệ' },
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
-      <nav className="glass sticky top-0 z-50 px-6 py-4 mb-8">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold gradient-text">
-            CAREEROS PRO
+    <div className="min-h-screen bg-navy">
+      <nav className="glass-dark sticky top-0 z-50 px-6 py-4">
+        <div className="container-max flex items-center justify-between">
+          <Link href="/" className="text-2xl font-bold text-white">
+            <span className="gradient-gold">VIỆC LÀM</span> VIỆT
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
@@ -31,8 +30,8 @@ export default function Layout({ children }) {
                 href={item.href}
                 className={`text-sm font-medium transition-colors ${
                   router.pathname === item.href
-                    ? 'text-indigo-600'
-                    : 'text-gray-600 hover:text-indigo-600'
+                    ? 'text-yellow-400'
+                    : 'text-gray-300 hover:text-yellow-400'
                 }`}
               >
                 {item.label}
@@ -40,8 +39,12 @@ export default function Layout({ children }) {
             ))}
           </div>
 
+          <button className="btn-gold text-sm py-2 px-6 hidden md:block">
+            Đăng tin tuyển dụng
+          </button>
+
           <button
-            className="md:hidden text-gray-600"
+            className="md:hidden text-white"
             onClick={() => setMenuOpen(!menuOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,23 +59,26 @@ export default function Layout({ children }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className="block py-2 text-gray-600 hover:text-indigo-600"
+                className="block py-2 text-gray-300 hover:text-yellow-400"
                 onClick={() => setMenuOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
+            <button className="btn-gold w-full text-sm py-2 mt-4">
+              Đăng tin tuyển dụng
+            </button>
           </div>
         )}
       </nav>
 
-      <main className="animate-fade-in">
+      <main>
         {children}
       </main>
 
-      <footer className="mt-20 py-12 bg-gray-900 text-gray-400">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p>&copy; 2026 CAREEROS PRO. All rights reserved.</p>
+      <footer className="bg-navy-light py-12 border-t border-navy-lighter">
+        <div className="container-max px-6 text-center text-gray-400">
+          <p>&copy; 2026 VIỆC LÀM VIỆT. All rights reserved.</p>
         </div>
       </footer>
     </div>

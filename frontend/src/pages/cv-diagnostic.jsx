@@ -28,16 +28,19 @@ export default function CVDiagnostic() {
 
   return (
     <Layout>
-      <div className="max-w-4xl mx-auto p-6 animate-fade-in">
+      <div className="container-max section-padding">
         <div className="text-center mb-12">
-          <h1 className="section-title gradient-text">CV Diagnostic</h1>
-          <p className="section-subtitle">
-            Upload your resume and get instant AI-powered feedback
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-white">CV </span>
+            <span className="gradient-gold">Diagnostic</span>
+          </h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Tải lên CV và nhận phản hồi tức thì từ AI
           </p>
         </div>
 
-        <div className="card mb-8">
-          <div className="border-2 border-dashed border-gray-300 rounded-2xl p-12 text-center hover:border-indigo-400 transition-colors duration-300">
+        <div className="card-dark mb-8">
+          <div className="border-2 border-dashed border-navy-lighter rounded-2xl p-12 text-center hover:border-yellow-400 transition-colors duration-300">
             <input
               type="file"
               onChange={(e) => setFile(e.target.files?.[0] || null)}
@@ -56,14 +59,14 @@ export default function CVDiagnostic() {
           <button
             onClick={handleUpload}
             disabled={!file || loading}
-            className="btn-primary w-full mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="btn-gold w-full disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Analyzing...' : 'Analyze Resume'}
           </button>
         </div>
 
         {result && (
-          <div className="card animate-slide-up">
+          <div className="card-dark animate-slide-up">
             <h2 className="text-2xl font-bold mb-6">Analysis Results</h2>
             <div className="flex justify-center mb-8">
               <ScoreGauge score={result.ats_score} />
