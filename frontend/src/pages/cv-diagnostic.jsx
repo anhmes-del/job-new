@@ -5,7 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 import api from '../lib/api';
 
 export default function CVDiagnostic() {
-  const [file, setFile] = useState<File | null>(null);
+  const [file, setFile] = useState(null);
   const [result, setResult] = useState(null);
   const { token } = useAuth();
 
