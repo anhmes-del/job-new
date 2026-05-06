@@ -1,3 +1,5 @@
+import Layout from '../components/Layout';
+
 export default function Dashboard() {
   const stats = [
     { label: 'CV Score', value: '85%', color: 'from-green-400 to-emerald-500' },

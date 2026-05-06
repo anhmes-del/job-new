@@ -1,3 +1,5 @@
+import Layout from '../components/Layout';
+
 export default function Pricing() {
   const plans = [
     { name: 'Free', price: '$0', features: ['1 CV Diagnostic', 'Basic ATS Score', '3 Job Matches'] },
